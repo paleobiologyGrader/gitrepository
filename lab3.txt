@@ -1,0 +1,86 @@
+1. How many collections are associated with this references?
+a) 704
+2. What is the reference id number for the article?
+a) 24429
+
+
+1. The first taxon in the taxonomic list is Rafinesquina alternata. Next to the taxonomic name is the citation (Conrad 1830), what is the significance of this citation?
+a) He named it
+2. What is the class, order, family, genus, and species name of the second taxon in the taxonomic list?
+a) Strophomenata Strophomenida Strophomenidae Strophomena planumbona
+3. In what County was the data collected?
+a) Union
+4. What age (Period) is the data from?
+a) Ordovician
+5. What is the geologic formation where the data was found?
+a) Liberty
+
+1. Zoom in so that you can see from Texas to Florida and from Florida to New York. You can zoom using the mouse wheel, by double-clicking, or clicking the + and - signs. Some of the occurrences are orange and others are yellow, what is the significance of the different colors?
+a) Orange represents Paleogene and yellow represents Neogene 
+2. Zoom back out. Add an additional filter into the searchbar, the Ypresian stage. The Ypresian is a time interval ranging from 47.8–56.0 million years ago. In what countries are there Ypresian occurrences of Abra?
+a) United States, Great Britian, Belgium
+3. Clear the Abra and Ypresian filters from the search. Look for the genus Ambonychia. Within the United States find the city with the most occurrences of Ambonychia. What is the name of this city?
+a) Cincinnati, Ohio
+4. What age (Period) are most Ambonychia occurrences?
+a) Ordovician
+
+1. During this time-period, were most occurrences of Ambonychia arrayed parallel or perpendicular to the equator?
+a) Parallel
+2. Click on the little insect icon on the left side of the screen. This brings up taxonomic information on the target taxon. What order does Ambonychia belong to?
+a) Myalinida
+
+1. What is the appropriate URL for downloading all occurrences of Ambonychia in the Lexington Limestone as a JSON?
+a) https://paleobiodb.org/data1.2/occs/list.json?datainfo&rowcount&base_name=Ambonychia&strat=Lexington Limestone
+2. What is the appropriate URL for downloading all occurrences of mammals present in the Paleocene through Oligocene epochs as a csv?
+a) https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=mammalia&interval=Paleocene,Oligocene
+3. What is the appropriate URL for downloading all opinions on the order Testudines in the Mesozoic?
+a) https://paleobiodb.org/data1.2/taxa/opinions.csv?datainfo&rowcount&base_name=Testudines&interval=Mesozoic
+4. What is the appropriate URL for downloading all collections of Aves, Marsupialia, and Sirenia in the United States as a csv?
+a) https://paleobiodb.org/data1.2/colls/list.csv?datainfo&rowcount&base_name=Aves, Marsupialia, Sirenia&cc=US
+5. What is the appropriate URL for downloading all occurrences of the gastropod genus Ficus as a csv?
+a) https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=gastropod:ficus
+
+
+1. What family does the genus Gastrocopta belong to?
+a) Gastrocoptidae
+2. There is only once occurrence of Isoetes in Portugal. What age is it?
+a) Aptian (Cretaceous)
+3. What is the age of the oldest occurrence of Gastrocopta?
+a) Eocene
+4. There is only one occurrence of Tiktaalik in the Paleobiology Database? Was that occurrence located in the tropics or the extratropics when it was alive?
+a) Tropics
+5. There are two occurrences of Namacalathus in Sibera. What geologic formations are they found in?
+a) Kotodzha Fm.
+b) Raiga Fm.
+
+
+1. In Lab Exercise 2 you downloaded a csv file of ammonite sizes from a github URL directly into R. What code would you use to download the above PBDB data directly into R?
+a) URL<-“https://paleobiodb.org/data1.2/colls/list.csv?base_name=Mammut&interval=Pliocene”
+b) mammut<-read.csv(URL,row.names=1)
+2. Download the above data into R. What are its dimensions?
+a) 39 observations of 12 variables
+3. Did the above call use the occurrences, collections, references, opinions, or specimens route?
+a) collections
+4. What genus is being called for? What is its colloquial name? What age did I limit the data query too?
+a) Mammut
+b) Mastodon
+c) Pliocene
+5. Look through the service documentation for the appropriate route (based on your answer to Question 2). Find out how to extend the age search to range from the Miocene Epoch through to the Pleistocene Epoch. Give the new data query URL.
+a) https://paleobiodb.org/data1.2/colls/list.csv?base_name=Mammut&interval=Miocene,Pleistocene
+6. I want the data query to show me the paleocoordinates (i.e., paleolatitude and paleolongitude) of each data point. Give the updated data query URL.
+a) https://paleobiodb.org/data1.2/colls/list.csv?base_name=Mammut&interval=Miocene,Pleistocene&pgm,gplates
+
+1. Each of the ammonite specimens in Part I of Lab 2 belongs to one of these three species. Based on 1) the morphologic information on these three species in the Paleobiology Database and 2) the morphologic information from Lab 2, can you tell which specimens belong to which species? Explain your reasoning.
+a) Involute vs evolute, W/D dimensions
+2. Look up Xenoceltites variocostatus in the Paleobiology Database. Find the first person (journal paper/reference) to name this species. (Hint: Both the first and second author's last names start with "B"). What is the name of the article?
+a) Smithian (Early Triassic) Ammonoid Faunas from Northwestern Guangxi (South China): Taxonomy and Biochronology
+3. Do a google scholar search for this article. Open it and scroll down to the "Plates" subsection. You should see various pictures of different ammonites towards the very end of the article. Find the pictures of Xenoceltites variocostatus. Based on the features in these pictures, can you identify which specimens in Part I of Lab 2 belong to this species?
+a) 1, 2, 3, 4, 5, 6, 8, 9, 10, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25
+
+
+
+
+
+
+
+
