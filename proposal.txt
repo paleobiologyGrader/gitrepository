@@ -1,0 +1,10 @@
+I want to look at the changes in biodiversity as the Indian Plate moves towards the Eurasian Plate. I will compare biodiversity of terrestrial animals before and after the collision (approximately the Jurassic thru the Quaternary). I will use either the Paleobiology Database or the Neotoma Database collect data, and calculate biodiversity using Shannon’s Entropy. I hypothesize that biodiversity will drastically increase immediately following the collision of the two plates. 
+
+
+https://paleobiodb.org/
+http://www.neotomadb.org/
+http://apps.neotomadb.org/explorer/
+
+
+
+
