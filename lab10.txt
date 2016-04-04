@@ -1,0 +1,93 @@
+Bryce
+Part I
+Summarize the review and comments you gave to your peer. You will need to do this for each proposal that you review (i.e., twice). Be sure to state the name of the person you are reviewing.
+Question 1
+Did you feel that the proposal you graded was complete in terms of length, and that it demonstrated a genuine effort on your peer's part. If not, explain what you felt was lacking.
+Bryce’s paper was a good length, and had many citations in the justification, showing that he did ample research on his topic. 
+Question 2
+Briefly summarize the overarching objective and hypothesis of the reviewed proposal.
+Bryce wants to measure the diversity of all trilobites during the time that brachiopods are becoming the dominate species in marine environments. The hypothesis was not clearly stated, but it was implied that the trilobite extinction was not just correlation to brachiopod population growth, but was caused by it. 
+Question 3
+Does the hypothesis meet the following criteria in your estimation? If not, explain why.
+* Do you believe that this hypothesis is coherent and understandable?
+o The hypothesis was not clearly stated, and not easy to pick out. It was hidden, or as he said, “implied”. 
+* Do you believe that this hypothesis is novel?
+o According to the proposal, a lot of this research is done on specific species, rather than all trilobites. 
+* Do you believe that this hypothesis is testable/feasible?
+o Yes, I think there is enough info out there already, but it just needs to be put together. It is definitely feasible. 
+* Do you believe that this hypothesis is scientifically or socially relevant?
+o Possibly. It could be relevant to modern marine ecosystems, but I am not as well versed in this topic. 
+Question 4
+Summarize the areas where you felt that the proposal could be improved.
+I felt that the intro needed to be more enticing, and a clear hypothesis needed to be stated. I questioned parts of the research plan, which could be more coherent and also could explain why he chose to use Matlab rather than R for the majority of the research. 
+Question 5
+What constructive criticism did you provide to your peer to address the areas that needed improvement?
+I told him to include more explanations in the research plan and to state a clear hypothesis in the intro. 
+Question 6
+Did you feel that this proposal made an adequate use of citation and background research? If not, what additional information did you want to see?
+I think there was a lot of research done and good use of citations for the justification section of the proposal. 
+Part II
+Summarize your response to your peers' reviews of your proposal. You will need to do this once for each review you receive. State who was your reviewer.
+Question 1
+Did the reviewer clearly understand your hypothesis? If not, what will you do to make it clearer?
+Yes. 
+Question 2
+Did the reviewer feel that your proposed project was scientifically or socially relevant? If not, how will you improve it?
+Yes. 
+Question 3
+Did the reviewer approve of your proposed analytical methods? If not, how will you improve them?
+I will look into the different measures of biodiversity in order to make sure I made the best choice. Also, I need to do more research on the length of reversals and if this will affect my research. 
+Question 4
+Do you feel that your reviewer did an adequate and thorough job in their review? How could they have improved their review?
+I think he did a good job. He provided constructive criticism, and also allowed me to explain my line of thinking/things I think are missing and help me find even more things I can improve. 
+Question 5
+In general, what steps will you now take to improve your proposal?
+I will find more research in order to strengthen my justification and research plan. 
+
+
+Julia
+Part I
+Summarize the review and comments you gave to your peer. You will need to do this for each proposal that you review (i.e., twice). Be sure to state the name of the person you are reviewing.
+Queston 1
+Did you feel that the proposal you graded was complete in terms of length, and that it demonstrated a genuine effort on your peer's part. If not, explain what you felt was lacking.
+Yes. The research plan was a bit short, but it showed that she did her research. 
+Question 2
+Briefly summarize the overarching objective and hypothesis of the reviewed proposal.
+The hypothesis changed from the intro to the research plan, so going over what sounds like will be the final hypothesis, she will find the various ecosystems where different pollinators live and propose a way to protect existing ecosystems or create new habitable ecosystems. 
+Question 3
+Does the hypothesis meet the following criteria in your estimation? If not, explain why.
+* Do you believe that this hypothesis is coherent and understandable?
+o No. It changes throughout the paper. 
+* Do you believe that this hypothesis is novel?
+o Not really. A lot of research is going into pollinators, and this may already be a topic that has been studied. 
+* Do you believe that this hypothesis is testable/feasible?
+o Yup.
+* Do you believe that this hypothesis is scientifically or socially relevant?
+o It is relevant both scientifically and socially. 
+Question 4
+Summarize the areas where you felt that the proposal could be improved.
+There is no clear hypothesis, and therefore the justification is a bit messy. The research plan is solid, but not for the first hypothesis that was stated. I think the overall direction needs to be figured out, but then it should all fall into place. 
+Question 5
+What constructive criticism did you provide to your peer to address the areas that needed improvement?
+The main one was figure out the hypothesis. Most of the other work was there, just not under the correct context. 
+Question 6
+Did you feel that this proposal made an adequate use of citation and background research? If not, what additional information did you want to see?
+Yes, you can tell a lot of research was done. I had to ask questions on some terminology relating to bees/pollinators but she was able to answer my questions. 
+Part II
+Summarize your response to your peers' reviews of your proposal. You will need to do this once for each review you receive. State who was your reviewer.
+Question 1
+Did the reviewer clearly understand your hypothesis? If not, what will you do to make it clearer?
+Yes. She thought it was very interesting. 
+Question 2
+Did the reviewer feel that your proposed project was scientifically or socially relevant? If not, how will you improve it?
+Yes.
+Question 3
+Did the reviewer approve of your proposed analytical methods? If not, how will you improve them?
+She questioned the proposed methods, and how I would find specific times for the reversals. I need to do more research in this area. 
+Question 4
+Do you feel that your reviewer did an adequate and thorough job in their review? How could they have improved their review?
+Yes. She had more geology based questions that I was able to answer, and I think that also helped me in figuring out what needed to be better explained in my proposal.
+Question 5
+In general, what steps will you now take to improve your proposal?
+I need to do more research! And figure out how to deduce the timing of reversals more accurately. 
+
