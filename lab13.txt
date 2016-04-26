@@ -1,0 +1,332 @@
+Problem Set 1
+1) What is the total biodiverisity (generic richness) of OrdovicianMatrix and SilurianMatrix? In the alpha, beta, and gammaADDITIVE diveristy partitioning paradigm, does this number represent alpha, beta, or gamma biodiversity? Show your code.
+53 different genera in Silurian
+23 different genera in Ordovician
+This is gamma diversity
+> dim(SilurianMatrix)
+[1] 29 53
+> dim(OrdovicianMatrix)
+[1] 15 23
+> Ordogamma<-23
+> Silgamma<-53
+
+2) What is the average biodiversity of all sample (stratigraphic units) in Ordovicianmatrix and SilurianMatrix? In the alpha, beta, and gamma ADDITIVE diversity partitioning paradigm, does this number represent alpha, beta, or gamma biodiversity? Show your code.
+> OrdoMean<-apply(OrdovicianMatrix,1,sum)
+> SilMean<-apply(SilurianMatrix,1,sum)
+> mean(SilMean)
+[1] 21
+> mean(OrdoMean)
+[1] 13.13333
+> Silalpha<-mean(SilMean)
+> Ordoalpha<-mean(OrdoMean)
+
+This is alpha biodiversity 
+
+3) What is the difference between the average biodiversity of all samples (stratigraphic units) in OrdovicianMatrix and the total biodiversity of OrdovicianMatrix. What about for the Silurian? In the alpha, beta, and gamma ADDITIVE diversity partitioning paradigm, does this number represent alpha, beta, or gamma biodiversity? Show your code.
+This is beta diversity
+> Silgamma-Silalpha
+[1] 32
+> Ordogamma-Ordoalpha
+[1] 9.866667
+> Ordobeta<-(Ordogamma-Ordoalpha)
+> Silbeta<-(Silgamma-Silalpha)
+
+4) Using the same ADDITIVE diversity partitioning schema, does alpha diversity increase between the Ordovician and Silurian? Does beta diversity? Does gamma diversity? By how much?
+
+Alpha diversity increases (+ 7.8)
+Beta diversity increases (+ 22.13333)
+Gamma diversity increase (+ 30)
+
+5) Sampling is different between the Ordovician and Silurian, which makes a direct comparison of the numbers questionable. Sometimes we try to get around this by representing alpha and beta as percentages of gamma.
+* What is the alpha diveristy of OrdovicianMatrix and SilurianMatrix as a percentage of their respective gamma diversities?
+o > Ordoalpha/Ordogamma
+o [1] 0.5710145
+o > Silalpha/Silgamma
+o [1] 0.3962264
+o Ordo percentage: 57.1%
+o Sil percentage: 39.6%
+* What is the beta diversity of OrdovicianMatrix and SilurianMatrix as a percentage of their respective gamma diversities?
+o > Silbeta/Silgamma
+o [1] 0.7816315
+o > Ordobeta/Ordogamma
+o [1] 0.6657005
+o Sil percentage: 78.2%
+o Ordo percentage: 66.6%
+* Does alpha increase or decrease across the Ordovician Silurian boundary when measured as a percentage?
+o Alpha decreases by 17.5%
+* Conceptually does this mean that Silurian faunas are more cosmopolitan (found in more places around North America) or are less cosmopolitan (found in fewer places around North America) following the Ordovician/Silurian mass extinction.
+o Less cosmopolitan because the average biodiversity of all samples has decreased 
+* Does this match what we learned about Silurian cosmopolitanism in class?
+o Nope. We learned that the Silurian was a peak time of cosmopolitanism. 
+6) What is one potential flaw with using percentages to compare changing alpha, beta, and gamma biodiversity between two time intervals?
+You can’t see the actual numeric increase in quantity of taxon.
+
+Problem Set 2
+1) Using what we did above as a guide, download comparable datasets for the End-Permian extinction and End-Cretaceous extinction and process them as we did above (Steps 2-5). Show your code.
+* Late Permian (Guadalupian - Lopingian) 
+o > LatePermian<-downloadPBDB(Taxa="Animalia",StartInterval="Guadalupian",StopInterval="Lopingian")
+o > LatePermian<-cleanRank(LatePermian,"genus")
+o > LatePermian<-constrainAges(LatePermian,Epochs)
+o > LatePermian<-macrostratMatch(LatePermian)
+o > PermianMatrix<-presenceMatrix(LatePermian,SampleDefinition="unit_name",TaxonRank="genus")
+o > PermianMatrix<-cullMatrix(PermianMatrix,2,10)
+* Early Triassic (Induan-Ladinian) 
+o EarlyTriassic<-downloadPBDB(Taxa="Animalia",StartInterval="Induan",StopInterval="Ladinian")
+o > EarlyTriassic<-cleanRank(EarlyTriassic,"genus")
+o > EarlyTriassic<-constrainAges(EarlyTriassic,Epochs)
+o > EarlyTriassic<-macrostratMatch(EarlyTriassic)
+o > TriassicMatrix<-presenceMatrix(EarlyTriassic,SampleDefinition="unit_name",TaxonRank="genus")
+o > TriassicMatrix<-cullMatrix(TriassicMatrix,2,10)
+* Late Cretaceous (Santonian-Maastrichtian)
+o > LateCretaceous<-downloadPBDB(Taxa="Animalia",StartInterval="Santonian",StopInterval="Maastrichtian")
+o > LateCretaceous<-cleanRank(LateCretaceous,"genus")
+o > LateCretaceous<-constrainAges(LateCretaceous,Epochs)
+o > LateCretaceous<-macrostratMatch(LateCretaceous)
+o > CretaceousMatrix<-presenceMatrix(LateCretaceous,SampleDefinition="unit_name",TaxonRank="genus")
+o > CretaceousMatrix<-cullMatrix(CretaceousMatrix,2,10)
+* Early Paleogene (Danian-Lutetian)
+o > EarlyPaleogene<-downloadPBDB(Taxa="Animalia",StartInterval="Danian",StopInterval="Lutetian")
+o > EarlyPaleogene<-cleanRank(EarlyPaleogene,"genus")
+o > EarlyPaleogene<-constrainAges(EarlyPaleogene,Epochs)
+o > EarlyPaleogene<-macrostratMatch(EarlyPaleogene)
+o > PaleogeneMatrix<-presenceMatrix(EarlyPaleogene,SampleDefinition="unit_name",TaxonRank="genus")
+o > PaleogeneMatrix<-cullMatrix(PaleogeneMatrix,2,10)
+
+2) What are the Alpha, Beta, and Gamma biodiversitites for each downloaded time-interval (not measured as a percentage)? Show your code.
+> dim(PermianMatrix)
+[1]  22 311
+> Permiangamma<-311
+> dim(TriassicMatrix)
+[1]  13 158
+> Triassicgamma<-158
+> dim(CretaceousMatrix)
+[1]  96 774
+> Cretaceousgamma<-774
+> dim(PaleogeneMatrix)
+[1]  120 1031
+> Paleogenegamma<-1031
+
+> PermianMean<-apply(PermianMatrix,1,sum)
+> mean(PermianMean)
+[1] 57.63636
+> Permianalpha<-mean(PermianMean)
+> TriassicMean<-apply(TriassicMatrix,1,sum)
+> Triassicalpha<-mean(PermianMean)
+> Triassicalpha
+[1] 35.15385
+> CretaceousMean<-apply(CretaceousMatrix,1,sum)
+> Cretaceousalpha<-mean(CretaceousMean)
+> Cretaceousalpha
+[1] 57.90625
+> PaleogeneMean<-apply(PaleogeneMatrix,1,sum)
+> Paleogenealpha<-mean(PaleogeneMean)
+> Paleogenealpha
+[1] 52.83333
+
+> Permianbeta<-(Permiangamma-Permianalpha)
+> Permianbeta
+[1] 253.3636
+> Triassicbeta<-(Triassicgamma-Triassicalpha)
+> Triassicbeta
+[1] 122.8462
+> Cretaceousbeta<-(Cretaceousgamma-Cretaceousalpha)
+> Cretaceousbeta
+[1] 716.0938
+> Paleogenebeta<-(Paleogenegamma-Paleogenealpha)
+> Paleogenebeta
+[1] 978.1667
+
+3) What are the Alpha and Beta biodiversities for each downloaded time-interval (when measured as a percentage of gamma)? Show your code.
+> Permianalpha/Permiangamma
+[1] 0.1853259
+> Permianbeta/Permiangamma
+[1] 0.8146741
+> Triassicalpha/Triassicgamma
+[1] 0.2224927
+> Triassicbeta/Triassicgamma
+[1] 0.7775073
+> Cretaceousalpha/Cretaceousgamma
+[1] 0.07481428
+> Cretaceousbeta/Cretaceousgamma
+[1] 0.9251857
+> Paleogenealpha/Paleogenegamma
+[1] 0.05124475
+> Paleogenebeta/Paleogenegamma
+[1] 0.9487553
+
+4) Does Alpha biodiversity increase or decrease after each extinction event (not measured as a percentage)? Show your code.
+Alpha decreases over both mass extinctions
+> Triassicalpha
+[1] 35.15385
+> Permianalpha
+[1] 57.63636
+> Cretaceousalpha
+[1] 57.90625
+> Paleogenealpha
+[1] 52.83333
+
+5) Does Alpha biodiversity increase or decrease after each extinction event (when measured as a percentage of gamma)? Show your code.
+Alpha increases over Permian/Triassic mass extinction
+Alpha decreases over K/Paleogene mass extinction
+> Permianalpha/Permiangamma
+[1] 0.1853259
+> Triassicalpha/Triassicgamma
+[1] 0.2224927
+> Cretaceousalpha/Cretaceousgamma
+[1] 0.07481428
+> Paleogenealpha/Paleogenegamma
+[1] 0.05124475
+
+
+Problem Set 3
+It is also possible to measure biodiversity using metrics other than generic richness, such as exponentiated Shannon's Entropy. Let's see what the biodiversity pattern looks like when analyzed in this way.
+* Hint: You may use the vegan package of previous labs to calculate Shannon's H
+1) Using what we did above as a guide, download comparable datasets for the End-Ordovician, End-Permian, and End-Cretaceous extinctions and process them as we did above (Steps 2-5). BUT, this time, use the abundanceMatrix( ) function instead of presenceMatrix( ).
+* Late Ordovician (Sandbian-Hirnantian)
+o > LateOrdovician<-downloadPBDB(Taxa="Animalia",StartInterval="Sandbian",StopInterval="Hirnantian")
+o > LateOrdovician<-cleanRank(LateOrdovician,"genus")
+o > LateOrdovician<-constrainAges(LateOrdovician,Epochs)
+o > LateOrdovician<-macrostratMatch(LateOrdovician)
+o > OrdovicianMatrix<-abundanceMatrix(LateOrdovician,SampleDefinition = "unit_name",TaxonRank = "genus")
+o > OrdovicianMatrix<-cullMatrix(OrdovicianMatrix,2,10)
+* Early Silurian (Llandovery-Wenlock)
+o > EarlySilurian<-downloadPBDB(Taxa="Animalia",StartInterval="Llandovery",StopInterval="Wenlock")
+o > EarlySilurian<-cleanRank(EarlySilurian,"genus")
+o > EarlySilurian<-constrainAges(EarlySilurian,Epochs)
+o > EarlySilurian<-macrostratMatch(EarlySilurian)
+o > SilurianMatrix<-abundanceMatrix(EarlySilurian,SampleDefinition = "unit_name",TaxonRank = "genus")
+o > SilurianMatrix<-cullMatrix(SilurianMatrix,2,10)
+* Late Permian (Lopingian)
+o > LatePermian<-downloadPBDB(Taxa="Animalia",StartInterval="Guadalupian",StopInterval="Lopingian")
+o > LatePermian<-cleanRank(LatePermian,"genus")
+o > LatePermian<-constrainAges(LatePermian,Epochs)
+o > LatePermian<-macrostratMatch(LatePermian)
+o > PermianMatrix<-abundanceMatrix(LatePermian,SampleDefinition = "unit_name",TaxonRank = "genus")
+o > PermianMatrix<-cullMatrix(PermianMatrix,2,10)
+* Early Triassic (Induan-Ladinian)
+o > EarlyTriassic<-downloadPBDB(Taxa="Animalia",StartInterval="Induan",StopInterval="Ladinian")
+o > EarlyTriassic<-cleanRank(EarlyTriassic,"genus")
+o > EarlyTriassic<-constrainAges(EarlyTriassic,Epochs)
+o > EarlyTriassic<-macrostratMatch(EarlyTriassic)
+o > TriassicMatrix<-abundanceMatrix(EarlyTriassic,SampleDefinition = "unit_name",TaxonRank = "genus")
+o > TriassicMatrix<-cullMatrix(TriassicMatrix,2,10)
+* Late Cretaceous (Santonian-Maastrichtian)
+o > LateCretaceous<-downloadPBDB(Taxa="Animalia",StartInterval="Santonian",StopInterval="Maastrichtian")
+o > LateCretaceous<-cleanRank(LateCretaceous,"genus")
+o > LateCretaceous<-constrainAges(LateCretaceous,Epochs)
+o > LateCretaceous<-macrostratMatch(LateCretaceous)
+o > CretaceousMatrix<-abundanceMatrix(LateCretaceous,SampleDefinition = "unit_name",TaxonRank = "genus")
+o > CretaceousMatrix<-cullMatrix(CretaceousMatrix,2,10)
+* Early Paleogene (Danian-Lutetian)
+o > EarlyPaleogene<-downloadPBDB(Taxa="Animalia",StartInterval="Danian",StopInterval="Lutetian")
+o > EarlyPaleogene<-cleanRank(EarlyPaleogene,"genus")
+o > EarlyPaleogene<-constrainAges(EarlyPaleogene,Epochs)
+o > EarlyPaleogene<-macrostratMatch(EarlyPaleogene)
+o > PaleogeneMatrix<-abundanceMatrix(EarlyPaleogene,SampleDefinition = "unit_name",TaxonRank = "genus")
+o > PaleogeneMatrix<-cullMatrix(PaleogeneMatrix,2,10)
+
+
+
+2) What are the Alpha, Beta, and Gamma biodiversity for each downloaded time-interval (not measured as a percentage) if biodiversity is measured as the exponentiated Shannon's Entropy? Show your code.
+gamma:
+> OrdovicianShannon<-diversity(OrdovicianMatrix,index = "shannon", MARGIN = 1, base = exp(1))
+> Ordogamma<-sum(OrdovicianShannon)
+> Ordogamma
+[1] 105.453
+> SilurianShannon<-diversity(SilurianMatrix,index = "shannon", MARGIN = 1, base = exp(1))
+> Siluriangamma<-sum(SilurianShannon)
+> Siluriangamma
+[1] 154.2872
+> PermianShannon<-diversity(PermianMatrix,index = "shannon", MARGIN = 1, base = exp(1))
+> Permiangamma<-sum(PermianShannon)
+> Permiangamma
+[1] 72.84669
+> TriassicShannon<-diversity(TriassicMatrix,index = "shannon", MARGIN = 1, base = exp(1))
+> Triassicgamma<-sum(TriassicShannon)
+> Triassicgamma
+[1] 38.50817
+> CretaceousShannon<-diversity(CretaceousMatrix,index = "shannon", MARGIN = 1, base = exp(1))
+> Cretaceousgamma<-sum(CretaceousShannon)
+> Cretaceousgamma
+[1] 318.7375
+> PaleogeneShannon<-diversity(PaleogeneMatrix,index = "shannon", MARGIN = 1, base = exp(1))
+> Paleogenegamma<-sum(PaleogeneShannon)
+> Paleogenegamma
+[1] 415.5354
+
+
+Alpha:
+> Ordovicianalpha<-mean(OrdovicianShannon)
+> Ordovicianalpha
+[1] 2.775078
+> Silurianalpha<-mean(SilurianShannon)
+> Silurianalpha
+[1] 3.214317
+> Permianalpha<-mean(PermianShannon)
+> Permianalpha
+[1] 3.311213
+> Triassicalpha<-mean(TriassicShannon)
+> Triassicalpha
+[1] 2.962167
+> Cretaceousalpha<-mean(CretaceousShannon)
+> Cretaceousalpha
+[1] 3.320182
+> Paleogenealpha<-mean(PaleogeneShannon)
+> Paleogenealpha
+[1] 3.462795
+
+
+Beta:
+> Ordovicianbeta<-(Ordogamma-Ordovicianalpha)
+> Ordovicianbeta
+[1] 102.6779
+> Silurianbeta<-(Siluriangamma-Silurianalpha)
+> Silurianbeta
+[1] 151.0729
+> Permianbeta<-(Permiangamma-Permianalpha)
+> Permianbeta
+[1] 69.53547
+> Triassicbeta<-(Triassicgamma-Triassicalpha)
+> Triassicbeta
+[1] 35.546
+> Cretaceousbeta<-(Cretaceousgamma-Cretaceousalpha)
+> Cretaceousbeta
+[1] 315.4173
+> Paleogenebeta<-(Paleogenegamma-Paleogenealpha)
+> Paleogenebeta
+[1] 412.0726
+3) What are the Alpha, Beta, and Gamma biodiversity for each downloaded time-interval (when measured as a percentage of gamma) if biodiversity is measured as the exponentiated Shannon's Entropy? Show your code.
+> Ordovicianalpha/Ordogamma
+[1] 0.02631579
+> Silurianalpha/Siluriangamma
+[1] 0.02083333
+> Permianalpha/Permiangamma
+[1] 0.04545455
+> Triassicalpha/Triassicgamma
+[1] 0.07692308
+> Cretaceousalpha/Cretaceousgamma
+[1] 0.01041667
+> Paleogenealpha/Paleogenegamma
+[1] 0.008333333
+
+> Ordovicianbeta/Ordogamma
+[1] 0.9736842
+> Silurianbeta/Siluriangamma
+[1] 0.9791667
+> Permianbeta/Permiangamma
+[1] 0.9545455
+> Triassicbeta/Triassicbeta
+[1] 1
+> Cretaceousbeta/Cretaceousgamma
+[1] 0.9895833
+> Paleogenebeta/Paleogenegamma
+[1] 0.9916667
+
+4) Does Alpha biodiversity increase or decrease after each extinction event (not measured as a percentage)? Show your code.
+Alpha increases after the Ordovician/Silurian, decreases after Permo/Triassic, increases after K/Pg
+5) Does Alpha biodiversity increase or decrease after each extinction event (when measured as a percentage of gamma)? Show your code.
+Alpha decreases after the Ordovician/Silurian, increases after Permo/Triassic, decreases after the K/Pg
+
+Problem 4
+Based on your results across problem sets 1, 2, and 3, do you believe that beta diversity tends to increase or decrease after mass extinction events as a general rule?
+Most often, beta biodiversity increases after mass 
