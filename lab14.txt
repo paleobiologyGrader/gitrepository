@@ -1,0 +1,41 @@
+Problem Set 1:
++Which taxon names appear most often? Print the top 20 taxa. 
+> Fixed<-counts[rev(order(counts[,2])),]
+> head(Fixed)
+      string matches
+10607    Lar     719
+10574    Ave     552
+10782    Pic     209
+12505   Fera     200
+11726   Fera     200
+10892   Rall     132
+> Fixed[1:20,]
+          string matches
+10607        Lar     719
+10574        Ave     552
+10782        Pic     209
+12505       Fera     200
+11726       Fera     200
+10892       Rall     132
+10647       Alca     104
+15001    Calcare     103
+10969       Scop      73
+3894    Ostracod      63
+10267      Boida      60
+6545   Gastropod      44
+4617        Acar      43
+11694      Theri      39
+10345    Annulat      37
+13581       Gale      31
+126     Trilobit      31
+14492  Articulat      28
+5611   Articulat      28
+4926  Brachiopod      24
+
++What are the commonly used or colloquial names for these 20 taxa, if any? (Look them up online if you need to.) 
+Lari (Seagull), Aves (birds), Pici (Toucan), Ferae, Ferae, Ralli, Alcae, Calcarea (sponges), Scopi, Ostracoda (crustacea), Boidae (boas), Gastropoda (snails), Acari (mites and ticks), Theria, Annulata, Galea (rodents), Trilobita (arthropods), Articulata, Articulata, Brachiopoda 
++Which of these are probably not good data? Why? 
+Lari, aves, pici, rally, calcarea, boidae, acari, annulata, galea – no hard parts, not commonly in anoxic conditions 
+
++Conversely, which taxa are likely candidates for pyritization, and why?
+Ostracoda, gastropoda, trilobite, articulate, brachiopoda – hard parts, occur in anoxic conditions 
